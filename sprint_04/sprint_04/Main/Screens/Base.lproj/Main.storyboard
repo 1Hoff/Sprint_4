@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_3" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="YS Display-Bold.ttf">
+            <string>YSDisplay-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="sprint_04" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iBj-dw-REO">
+                                <rect key="frame" x="20" y="134" width="362" height="672"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vik-uk-AIV">
+                                        <rect key="frame" x="0.0" y="0.0" width="362" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопрос:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDR-eH-AoR" userLabel="Question Title Label">
+                                                <rect key="frame" x="0.0" y="0.0" width="348.66666666666669" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="9rb-aP-69w"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="YSDisplay-Bold" family="YS Display" pointSize="20"/>
+                                                <color key="textColor" name="YP White"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaC-XG-ZDP" userLabel="Index Label">
+                                                <rect key="frame" x="348.66666666666669" y="0.0" width="13.333333333333314" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="N0W-3a-ulY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="YSDisplay-Bold" family="YS Display" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pq1-D9-Nq6" userLabel="Preview Image">
+                                        <rect key="frame" x="26" y="52" width="310" height="465"/>
+                                        <color key="backgroundColor" name="YP White"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="pq1-D9-Nq6" secondAttribute="height" multiplier="2:3" id="35g-SX-YVf"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рейтинг этого фильма меньше, чем 5?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUX-n3-HLV" userLabel="Question Label">
+                                        <rect key="frame" x="0.0" y="537" width="362" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="sBc-g3-kOH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="YSDisplay-Bold" family="YS Display" pointSize="23"/>
+                                        <color key="textColor" name="YP White"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zP9-D4-WzY">
+                                        <rect key="frame" x="0.0" y="612" width="362" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Yl-D4-FcS">
+                                                <rect key="frame" x="0.0" y="0.0" width="171" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="AhP-dc-lS3"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Нет">
+                                                    <fontDescription key="titleFontDescription" name="YSDisplay-Bold" family="YS Display" pointSize="20"/>
+                                                    <color key="baseForegroundColor" name="YP Black"/>
+                                                    <color key="baseBackgroundColor" name="YP White"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="ButtonNo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uER-uu-c5Y"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DA4-bA-xzd">
+                                                <rect key="frame" x="191" y="0.0" width="171" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Z8x-kw-hdm"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Да">
+                                                    <fontDescription key="titleFontDescription" name="YSDisplay-Bold" family="YS Display" pointSize="20"/>
+                                                    <color key="baseForegroundColor" name="YP Black"/>
+                                                    <color key="baseBackgroundColor" name="YP White"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="ButtonYes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d7w-rb-t6V"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="zP9-D4-WzY" secondAttribute="bottom" id="APW-PK-ZlZ"/>
+                                    <constraint firstItem="vik-uk-AIV" firstAttribute="leading" secondItem="iBj-dw-REO" secondAttribute="leading" id="EEc-wj-xPZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="zP9-D4-WzY" secondAttribute="trailing" id="IIq-Du-fXK"/>
+                                    <constraint firstItem="AUX-n3-HLV" firstAttribute="leading" secondItem="iBj-dw-REO" secondAttribute="leading" id="QAG-te-ng5"/>
+                                    <constraint firstAttribute="trailing" secondItem="AUX-n3-HLV" secondAttribute="trailing" id="T3r-8D-qAQ"/>
+                                    <constraint firstItem="vik-uk-AIV" firstAttribute="top" secondItem="iBj-dw-REO" secondAttribute="top" id="UXq-T8-paV"/>
+                                    <constraint firstItem="zP9-D4-WzY" firstAttribute="leading" secondItem="iBj-dw-REO" secondAttribute="leading" id="W8l-Lk-9v3"/>
+                                    <constraint firstAttribute="trailing" secondItem="vik-uk-AIV" secondAttribute="trailing" id="aBU-5H-ICf"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="iBj-dw-REO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4Zb-38-Uja"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iBj-dw-REO" secondAttribute="trailing" constant="20" id="7dR-XF-VVz"/>
+                            <constraint firstItem="iBj-dw-REO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="EiP-pe-jhf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iBj-dw-REO" secondAttribute="bottom" id="xz1-Dy-1D8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ButtonNo" destination="5Yl-D4-FcS" id="YLL-m8-HdR"/>
+                        <outlet property="ButtonYes" destination="DA4-bA-xzd" id="Bwa-vV-vVR"/>
+                        <outlet property="Poster" destination="pq1-D9-Nq6" id="uKd-GX-McQ"/>
+                        <outlet property="Question" destination="AUX-n3-HLV" id="H1G-dQ-GRs"/>
+                        <outlet property="number" destination="NaC-XG-ZDP" id="5fG-KE-tdc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-70.769230769230774" y="110.18957345971563"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="YP Black">
+            <color red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YP White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
