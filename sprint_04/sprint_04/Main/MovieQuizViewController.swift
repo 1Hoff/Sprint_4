@@ -1,32 +1,31 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MovieQuizViewController: UIViewController {
     
-    @IBOutlet weak var Poster: UIImageView!
-    @IBOutlet weak var Question: UILabel!
+    @IBOutlet weak var showFilmPoster: UIImageView!
+    @IBOutlet weak var showQuestionLabel: UILabel!
     @IBOutlet weak var ButtonNo: UIButton!
     @IBOutlet weak var ButtonYes: UIButton!
-    @IBOutlet weak var number: UILabel!
+    @IBOutlet weak var showQuestionNumber: UILabel!
     
-    var currentQuestionIndex = 0
-    var correctAnswers = 0
-    var totalCorrectAnswers = 0
-    var totalGamesPlayed = 0
-    var bestRecord = 0
-    var totalQuestionsAsked = 0
-    var bestRecordDate: Date?
-    var dateString = ""
-    
-    
+    private var currentQuestionIndex = 0
+    private var correctAnswers = 0
+    private var totalCorrectAnswers = 0
+    private var totalGamesPlayed = 0
+    private var bestRecord = 0
+    private var totalQuestionsAsked = 0
+    private var bestRecordDate: Date?
+    private var bestRecordString = ""
     
     
-    struct QuizQuestion {
+    
+    
+    private struct QuizQuestion {
         let image: String
         let text: String
         let correctAnswer: Bool
     }
-    
     
     
     
@@ -73,9 +72,7 @@ class ViewController: UIViewController {
             correctAnswer: false)
     ]
     
-    
-    
-    
+
     
     
     override func viewDidLoad() {
@@ -89,11 +86,11 @@ class ViewController: UIViewController {
     private func showCurrentQuestion() {
         let currentQuestion = questions[currentQuestionIndex]
         
-        Question.text = currentQuestion.text
+        showQuestionLabel.text = currentQuestion.text
         
-        Poster.image = UIImage(named: currentQuestion.image)
+        showFilmPoster.image = UIImage(named: currentQuestion.image)
         
-        number.text = "\(currentQuestionIndex + 1)/\(questions.count)"
+        showQuestionNumber.text = "\(currentQuestionIndex + 1)/\(questions.count)"
     }
     
     
@@ -102,11 +99,13 @@ class ViewController: UIViewController {
         if isCorrect {
             correctAnswers += 1
         }
-        Poster.layer.masksToBounds = true // 1
-        Poster.layer.borderWidth = 8 // 2
-        Poster.layer.borderColor = isCorrect ? UIColor.ypGreen.cgColor : UIColor.ypRed.cgColor // 3
-        Poster.layer.cornerRadius = 20 // 4
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+        showFilmPoster.layer.masksToBounds = true // 1
+        showFilmPoster.layer.borderWidth = 8 // 2
+        showFilmPoster.layer.borderColor = isCorrect ? UIColor.ypGreen.cgColor : UIColor.ypRed.cgColor // 3
+        showFilmPoster.layer.cornerRadius = 20 // 4
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+            guard let self else { return }
+            self.showFilmPoster.layer.borderWidth = 0
             self.nextQuestion()
         }
     }
@@ -119,6 +118,7 @@ class ViewController: UIViewController {
     @IBAction private func ButtonYes(_ sender: UIButton) {
         let currentQuestion = questions[currentQuestionIndex] // 1
         let givenAnswer = true // 2
+        ButtonYes.isEnabled = false
         
         showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer) // 3
         
@@ -126,6 +126,7 @@ class ViewController: UIViewController {
     @IBAction private func ButtonNo(_ sender: UIButton) {
         let currentQuestion = questions[currentQuestionIndex] // 1
         let givenAnswer = false // 2
+        ButtonNo.isEnabled = false
         
         showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer) // 3
     }
@@ -138,6 +139,8 @@ class ViewController: UIViewController {
     
     private func nextQuestion() {
         if currentQuestionIndex < questions.count - 1 {
+            ButtonNo.isEnabled = true
+            ButtonYes.isEnabled = true
             currentQuestionIndex += 1
             showCurrentQuestion()
         } else {
@@ -150,7 +153,7 @@ class ViewController: UIViewController {
                 if let date = bestRecordDate {
                     let formatter = DateFormatter()
                     formatter.dateFormat = "dd.MM.yyyy HH:mm"
-                    dateString = "\(bestRecord)/\(questions.count) \(formatter.string(from: date))"
+                    bestRecordString = "\(bestRecord)/\(questions.count) \(formatter.string(from: date))"
                 }
             }
             
@@ -161,7 +164,7 @@ class ViewController: UIViewController {
             let message = """
             Ваш результат: \(correctAnswers) из \(questions.count)
             Игр сыграно: \(totalGamesPlayed)
-            Ваш лучший рекорд: \(dateString)
+            Ваш лучший рекорд: \(bestRecordString)
             Средняя точность: \(accuracyString)%
             """
             

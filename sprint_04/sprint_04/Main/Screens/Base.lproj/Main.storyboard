@@ -13,10 +13,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Movie Quiz View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="sprint_04" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MovieQuizViewController" customModule="sprint_04" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,7 +88,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="ButtonNo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uER-uu-c5Y"/>
+                                                    <action selector="ButtonNo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dud-Le-TDQ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DA4-bA-xzd">
@@ -108,7 +108,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="ButtonYes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d7w-rb-t6V"/>
+                                                    <action selector="ButtonYes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yrs-BH-dEj"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -136,11 +136,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ButtonNo" destination="5Yl-D4-FcS" id="YLL-m8-HdR"/>
-                        <outlet property="ButtonYes" destination="DA4-bA-xzd" id="Bwa-vV-vVR"/>
-                        <outlet property="Poster" destination="pq1-D9-Nq6" id="uKd-GX-McQ"/>
-                        <outlet property="Question" destination="AUX-n3-HLV" id="H1G-dQ-GRs"/>
-                        <outlet property="number" destination="NaC-XG-ZDP" id="5fG-KE-tdc"/>
+                        <outlet property="ButtonNo" destination="5Yl-D4-FcS" id="A6t-js-wuq"/>
+                        <outlet property="ButtonYes" destination="DA4-bA-xzd" id="4iL-CE-fmR"/>
+                        <outlet property="showFilmPoster" destination="pq1-D9-Nq6" id="QJc-tN-dkY"/>
+                        <outlet property="showQuestionLabel" destination="AUX-n3-HLV" id="IIQ-OE-I5i"/>
+                        <outlet property="showQuestionNumber" destination="NaC-XG-ZDP" id="bX6-ab-yjK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
