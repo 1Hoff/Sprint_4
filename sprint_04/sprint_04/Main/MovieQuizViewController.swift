@@ -180,6 +180,8 @@ class MovieQuizViewController: UIViewController {
                 self.showCurrentQuestion()
                 self.totalGamesPlayed = 0
                 self.correctAnswers = 0
+                self.ButtonNo.isEnabled = true
+                self.ButtonYes.isEnabled = true
             }
 
             alert.addAction(action)
